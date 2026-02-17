@@ -35,5 +35,5 @@ Un classifieur d’images binaire (Square vs Circle) est entraîné puis évalu�
 ## Author
 
 Nassim GASTLI
-MSc Data Management & Artificial Intelligence
+MSc 2 Data Management & Artificial Intelligence, ECE Paris
 MLOps & Machine Learning Engineering
