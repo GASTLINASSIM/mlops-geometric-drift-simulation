@@ -42,7 +42,7 @@ Un classifieur d’images binaire (Square vs Circle) est entraîné puis évalu�
 
 ### 1. Cloner le repository
 
-- git clone <URL_DU_REPO>
+- git clone "https://github.com/GASTLINASSIM/mlops-geometric-drift-simulation/"
 - cd mlops_lab
 
 ### 2. Démarrer l’infrastructure (MLflow + MinIO)
