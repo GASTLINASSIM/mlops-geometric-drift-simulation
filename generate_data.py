@@ -13,8 +13,8 @@ IMG_SIZE = 64
 # N_SAMPLES = 50  # Number of images per class
 # NOISE_LEVEL = 0.0  # 0.0 = Clean, 0.5 = Very Noisy
 
-N_SAMPLES = 200  # Number of images per class (>= 500 for EXO1)
-NOISE_LEVEL = 0.15  # 0.0 = Clean, 0.5 = Very Noisy (EXO1: > 0)
+N_SAMPLES = 500  # Number of images per class 
+NOISE_LEVEL = 0.10  # 0.0 = Clean, 0.5 = Very Noisy 
 INVERT_COLORS = False  # EXO2 will use True
 # ---------------------------------------------------------
 
@@ -36,9 +36,9 @@ def generate_dataset():
             draw = ImageDraw.Draw(img)
 
             # Random Shape Properties
-            size = np.random.randint(10, 20)
-            x = np.random.randint(10, 40)
-            y = np.random.randint(10, 40)
+            size = np.random.randint(8, 28)
+            x = np.random.randint(0, IMG_SIZE - size)
+            y = np.random.randint(0, IMG_SIZE - size)
             
             # Draw Shape
             if label == "square":
