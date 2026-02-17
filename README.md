@@ -31,3 +31,9 @@ Un classifieur d’images binaire (Square vs Circle) est entraîné puis évalu�
 3. Gouvernance des modèles (versions, staging) via MLflow Registry
 4. Pipeline d’entraînement traçable et auditable
 5. Validation stricte des entrées/sorties via Model Signature
+
+## Author
+
+Nassim GASTLI
+MSc Data Management & Artificial Intelligence
+MLOps & Machine Learning Engineering
