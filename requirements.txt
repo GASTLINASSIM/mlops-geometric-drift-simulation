@@ -1,0 +1,8 @@
+mlflow
+boto3
+scikit-learn
+pandas
+dvc
+dvc-s3
+pillow
+numpy

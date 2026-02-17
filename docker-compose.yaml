@@ -1,0 +1,42 @@
+version: '3.7'
+services:
+  # ☁️ MinIO: Your local AWS S3 (Stores Data & Models)
+  minio:
+    image: minio/minio
+    container_name: mlflow_s3
+    ports:
+      - "9090:9000" # API port
+      - "9001:9001" # Console port
+    command: server /data --console-address ":9001"
+    environment:
+      #define user id (MINIO_ROOT_USER):minio_user and mdp
+      MINIO_ROOT_USER: minio_user
+      MINIO_ROOT_PASSWORD: minio_password
+    volumes:
+      - minio_data:/data
+
+  # 🧠 MLflow: Your Model Registry
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:latest
+    container_name: mlflow_server
+    ports:
+      - "5000:5000"
+    environment:
+      #ml_flow endpoint, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+      MLFLOW_S3_ENDPOINT_URL: http://minio:9000
+      AWS_ACCESS_KEY_ID: minio_user
+      AWS_SECRET_ACCESS_KEY: minio_password
+    command: >
+      mlflow server
+      --backend-store-uri sqlite:///mlflow.db
+      --default-artifact-root s3://mlops-storage/
+      --host 0.0.0.0
+      --port 5000
+    depends_on:
+      - minio
+    volumes:
+      - mlflow_data:/mlflow
+
+volumes:
+  minio_data:
+  mlflow_data:

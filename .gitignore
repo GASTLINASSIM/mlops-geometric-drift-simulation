@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+.env
+# (Gérées par DVC -> MinIO, pas par Git)
+data/
+# Note : On garde data.dvc (le ticket), mais on ignore le dossier data (le
+contenu)
+# 📊 MLflow
+mlflow.db
+mlruns/
+.trash/
+/data
