@@ -1,46 +1,33 @@
-MLOps Data Drift Simulation
-Overview
+# Simulation de Data Drift en MLOps
 
-This project demonstrates a practical MLOps workflow focused on data versioning, drift detection, experiment tracking, and model lifecycle management.
+## Présentation
 
-A binary image classifier (Square vs Circle) is trained and evaluated under changing data conditions. A simulated production drift (inverted images and noise) causes performance degradation. The system is then updated with a new dataset version to restore robustness.
+Ce projet met en œuvre un workflow MLOps reproductible autour de la versioning des données, la détection de drift, le suivi d’expériences et la gouvernance des modèles.
 
-Objectives
+Un classifieur d’images binaire (Square vs Circle) est entraîné puis évalué sous différentes conditions de données. Une dérive simulée en production (images inversées et bruit) dégrade les performances. Le système est ensuite renforcé via une nouvelle version de dataset afin d’améliorer la robustesse.
 
-Detect and measure data drift
+## Objectifs
 
-Version datasets using DVC
+- Détecter et mesurer une dérive de données (data drift)
+- Versionner les datasets avec DVC
+- Suivre les expériences et métriques avec MLflow
+- Enregistrer et gérer les versions de modèles via le Model Registry
+- Enforcer un schéma d’entrée/sortie (Model Signature) pour sécuriser le déploiement
+- Garantir la reproductibilité entre code, données et artefacts
 
-Track experiments and metrics with MLflow
+## Stack MLOps
 
-Register and manage model versions
+- Git : versioning du code
+- DVC : versioning des données
+- MinIO : stockage S3-compatible (backend DVC / artefacts)
+- MLflow : tracking des expériences et Model Registry
+- Docker : orchestration des services
+- Scikit-learn : entraînement du modèle
 
-Enforce model input/output schema with MLflow Signature
+## Points clés
 
-Ensure full reproducibility between code, data, and models
-
-MLOps Stack
-
-Git – Code versioning
-
-DVC – Data versioning
-
-MinIO – S3-compatible storage backend
-
-MLflow – Experiment tracking and Model Registry
-
-Docker – Service orchestration
-
-Scikit-learn – Model training
-
-Key Concepts Demonstrated
-
-Data drift simulation and monitoring
-
-Dataset evolution (V1 → V2 → V3)
-
-Model Registry lifecycle management
-
-Reproducible training pipeline
-
-Strict schema validation with Model Signature
+1. Simulation et monitoring de data drift
+2. Évolution contrôlée du dataset (V1 → V2 → V3)
+3. Gouvernance des modèles (versions, staging) via MLflow Registry
+4. Pipeline d’entraînement traçable et auditable
+5. Validation stricte des entrées/sorties via Model Signature
