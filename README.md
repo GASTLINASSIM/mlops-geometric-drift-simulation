@@ -45,28 +45,28 @@ Un classifieur d’images binaire (Square vs Circle) est entraîné puis évalu�
 - git clone <URL_DU_REPO>
 - cd mlops_lab
 
-2. Démarrer l’infrastructure (MLflow + MinIO)
+### 2. Démarrer l’infrastructure (MLflow + MinIO)
 - docker-compose up -d
 
-MLflow sera accessible à l’adresse suivante :
+#### MLflow sera accessible à l’adresse suivante :
 - http://localhost:5000
 
-3. Installer l’environnement Python
+### 3. Installer l’environnement Python
 - python3 -m venv venv
 - source venv/bin/activate
 - pip install -r requirements.txt
 
-4. Générer les données
+### 4. Générer les données
 - python generate_data.py
 
-5. Entraîner le modèle
+### 5. Entraîner le modèle
 - python train.py
 
-6. Versionner les données avec DVC (optionnel)
+### 6. Versionner les données avec DVC (optionnel)
 - dvc add data
 - dvc push
 
-7. Simuler un data drift (audit)
+### 7. Simuler un data drift (audit)
 - python generate_data.py --output-dir drift_data --invert
 - python train.py --mode audit --data-dir drift_data --model-uri "models:/GeometricShapesClassifier/1"
 
