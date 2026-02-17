@@ -13,7 +13,7 @@ IMG_SIZE = 64
 # N_SAMPLES = 50  # Number of images per class
 # NOISE_LEVEL = 0.0  # 0.0 = Clean, 0.5 = Very Noisy
 
-N_SAMPLES = 500  # Number of images per class (>= 500 for EXO1)
+N_SAMPLES = 200  # Number of images per class (>= 500 for EXO1)
 NOISE_LEVEL = 0.15  # 0.0 = Clean, 0.5 = Very Noisy (EXO1: > 0)
 INVERT_COLORS = False  # EXO2 will use True
 # ---------------------------------------------------------
